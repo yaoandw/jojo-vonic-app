@@ -16,7 +16,11 @@
             // 组件创建完后获取数据，
             // 此时 data 已经被 observed 了
             $toast.show('loading...');
-            $router.forward('/cindex/products')
+            console.log(this.$router);
+            this.$router.forward('/cindex/products');
+        },
+        mounted () {
+
         }
     }
 </script>
