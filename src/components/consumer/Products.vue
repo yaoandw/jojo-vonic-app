@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{ title: 'Home' }">
+  <div class="page has-navbar" v-nav="{ title: '首页' }">
     <div class="page-content">
       <cells :items="post" :on-cell-click="onCellClick" col="2"></cells>
     </div>
@@ -12,13 +12,7 @@
     data () {
       return {
           msg: 'Hello! Vonic.',
-          post:[],
-          entrances: [
-              '<div class="entrance assertive"><i class="icon ion-ios-flame"></i><br><span>热门</span></div>',
-              '<div class="entrance energized"><i class="icon ion-ios-star"></i><br><span>好评</span></div>',
-              '<div class="entrance balanced"><i class="icon ion-ios-location"></i><br><span>附近</span></div>',
-              '<div class="entrance positive"><i class="icon ion-ios-search"></i><br><span>搜索</span></div>',
-          ]
+          post:[]
       }
     },
       created () {

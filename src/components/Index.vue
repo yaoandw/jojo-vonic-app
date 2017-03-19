@@ -17,7 +17,9 @@
             // 此时 data 已经被 observed 了
             $toast.show('loading...');
             console.log(this.$router);
-            this.$router.forward('/cindex/products');
+            setTimeout(() => {
+                this.$router.forward('/cindex/products');
+            }, 1000)
         },
         mounted () {
 
