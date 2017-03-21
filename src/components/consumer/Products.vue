@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{ title: '首页' }">
+  <div class="page has-navbar" v-nav="{ title: '首页', showBackButton: false }">
     <div class="page-content">
       <cells :items="post" :on-cell-click="onCellClick" col="2"></cells>
     </div>
@@ -7,12 +7,13 @@
 </template>
 <script>
 //    import axios from 'axios';
-      import {HTTP} from '../../http-common';
+  import httpUtil from '../../httpUtil';
     export default {
     data () {
       return {
           msg: 'Hello! Vonic.',
-          post:[]
+          post:[],
+          items:[]
       }
     },
       created () {
@@ -22,24 +23,25 @@
       },
       watch: {
           // 如果路由有变化，会再次执行该方法
-          '$route': 'fetchData'
+//          '$route': 'fetchData'
       },
       methods: {
           fetchData () {
               self.vueObj = this;
-              HTTP.get('populars').then(function (response) {
-                  console.log(response.data);
+              httpUtil.get('populars',function (responseData) {
+//                  console.log(response.data);
 //                  $toast.show(response.data);
-                  var items = response.data.items;
+                  var items = responseData.items;
 
+                  self.vueObj.items = items;
                   self.vueObj.post = self.vueObj.processItems(items);
-              })
-                  .catch(function (error) {
-                      $toast.show(error);
-                  });
+              });
           },
           onCellClick(cellIndex) {
               console.log('cell ' + cellIndex + ' clicked');
+              var item = this.items[cellIndex];
+              console.log('push to product: '+item.products.id);
+              $router.forward('/c/product/'+item.products.id)
           },
 
           getIcon(product) {
