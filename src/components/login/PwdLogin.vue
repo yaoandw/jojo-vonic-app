@@ -19,6 +19,7 @@
 </template>
 <script>
     import httpUtil from '../../httpUtil';
+    import sess from '../../sess';
     export default{
         data() {
             return {
@@ -38,9 +39,22 @@
                 }
                 httpUtil.post('login/auth',{"mobile":this.username,"password":this.password},function (responseData) {
                     $toast.show('登录成功');
+                    sess.set('accessToken',responseData.accessToken);
                     setTimeout(() => {
-                        $router.forward('/c/products');
+//                        $router.forward('/c/products');
+//                        $router.back();
+                        window.history.back()
                     }, 1000)
+                });
+            },
+            setCookie(){
+                httpUtil.get('test/test/setCookieTest',function (responseData) {
+
+                });
+            },
+            getCookie(){
+                httpUtil.get('test/test/getCookieTest',function (responseData) {
+
                 });
             }
         }
