@@ -18,7 +18,7 @@
             $toast.show('loading...');
             console.log(this.$router);
             setTimeout(() => {
-                this.$router.forward('/cindex/products');
+                this.$router.forward('/c/products');
             }, 1000)
         },
         mounted () {

@@ -12,26 +12,26 @@
             iconOn: 'ion-ios-home',
             iconOff: 'ion-ios-home-outline',
             text: '首页',
-            path: '/cindex/products'
+            path: '/c/products'
           },
           {
             iconOn: 'ion-ios-pricetags',
             iconOff: 'ion-ios-pricetags-outline',
             text: '心愿单',
-            path: '/cindex/wishes'
+            path: '/c/wishes'
           },
           {
             iconOn: 'ion-ios-cart',
             iconOff: 'ion-ios-cart-outline',
             text: '订单',
-            path: '/cindex/orders',
+            path: '/c/orders',
             badge: '5'
           },
           {
             iconOn: 'ion-ios-person',
             iconOff: 'ion-ios-person-outline',
             text: '消息',
-            path: '/cindex/messages'
+            path: '/c/messages'
           }
         ]
       }
