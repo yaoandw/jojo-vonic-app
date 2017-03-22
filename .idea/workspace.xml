@@ -385,7 +385,7 @@
       <workItem from="1489656331753" duration="3549000" />
       <workItem from="1489718906198" duration="11216000" />
       <workItem from="1489852333397" duration="21392000" />
-      <workItem from="1490090784802" duration="27000" />
+      <workItem from="1490090784802" duration="163000" />
     </task>
     <task id="LOCAL-00001" summary="rename cindex">
       <created>1489657706073</created>
@@ -405,7 +405,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69280000" />
+    <option name="totallyTimeSpent" value="69416000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="733" extended-state="6" />
