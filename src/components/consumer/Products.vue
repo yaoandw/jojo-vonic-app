@@ -27,14 +27,14 @@
       },
       methods: {
           fetchData () {
-              self.vueObj = this;
-              httpUtil.get('populars',function (responseData) {
+//              self.vueObj = this;
+              httpUtil.get('populars',responseData => {
 //                  console.log(response.data);
 //                  $toast.show(response.data);
-                  var items = responseData.items;
+                  let items = responseData.items;
 
-                  self.vueObj.items = items;
-                  self.vueObj.post = self.vueObj.processItems(items);
+                  this.items = items;
+                  this.post = this.processItems(items);
               });
           },
           onCellClick(cellIndex) {
