@@ -37,12 +37,14 @@ export default {
         console.log(response.data);
         console.info('rrrrrr');
 //                  $toast.show(response.data);
-        if (response.data.bbErrorCode == 10001){//未登录
+        if (response.data.bbErrorCode != 200) {
             $toast.show(response.data.bbErrorMsg);
-            setTimeout(() => {
-                $router.forward('/pwdLogin');
-            }, 1000)
-        }else {
+            if (response.data.bbErrorCode == 10001){//未登录
+                setTimeout(() => {
+                    $router.forward('/pwdLogin');
+                }, 1000)
+            }
+        } else {
             callback(response.data);
         }
     }
