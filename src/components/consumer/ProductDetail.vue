@@ -36,18 +36,13 @@
 
         methods: {
             fetchData (done) {
-                self.vueObj = this;
                 var pid = $app.$route.params.pid;
                 console.log(pid);
-                httpUtil.get('products/'+pid,function (responseData) {
-//                    console.log(responseData);
-                    if (done)
+                httpUtil.get('products/'+pid, responseData => {
+                    if (done){
                         done();
-//                  $toast.show(response.data);
-//                    var items = response.data.items;
-//
-//                    self.vueObj.items = items;
-//                    self.vueObj.post = self.vueObj.processItems(items);
+                    }
+
                 });
             },
             onRefresh(done) {

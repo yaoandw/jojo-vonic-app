@@ -39,11 +39,12 @@
                 }
                 httpUtil.post('login/auth',{"mobile":this.username,"password":this.password},function (responseData) {
                     $toast.show('登录成功');
+                    console.info('accessToken: '+responseData.accessToken);
                     sess.set('accessToken',responseData.accessToken);
+                    console.info(sess.get('accessToken'));
                     setTimeout(() => {
-//                        $router.forward('/c/products');
-//                        $router.back();
-                        window.history.back()
+//                        window.history.back()
+                        $router.go(-1);
                     }, 1000)
                 });
             },
